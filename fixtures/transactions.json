@@ -1,0 +1,152 @@
+{
+    "transactions": {
+        "size": 4,
+        "data": [
+            {
+                "date": "Thu Oct 21 2021",
+                "transactions": [
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "EXTRA SPACE 1566",
+                        "amount": "$667.25 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "Uber Technologies",
+                        "amount": "$41.86 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "ONE MORE THAI",
+                        "amount": "$28.29 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "Amazon",
+                        "amount": "$25.98 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "Uber Technologies",
+                        "amount": "$7.82 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "DIG INN 70 PRINCE ST",
+                        "amount": "$12.75 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "LUGG",
+                        "amount": "$34.00 "
+                    },
+                    {
+                        "date": "Thu Oct 21 2021",
+                        "vendor": "SQ *GASOLINE ALLEY COF",
+                        "amount": "$4.00 "
+                    }
+                ]
+            },
+            {
+                "date": "Wed Oct 20 2021",
+                "transactions": [
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "Uber Technologies",
+                        "amount": "$26.98 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "Uber Technologies",
+                        "amount": "$48.92 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "SQ *CHEEKY SANDWICHES",
+                        "amount": "$7.08 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "Ikea",
+                        "amount": "$438.73 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "SQ *LITTLE CANAL",
+                        "amount": "$5.00 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "DAZZLINGCLEAN 10/20",
+                        "amount": "$42.58 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "Ikea",
+                        "amount": "$160.97 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "LUGG TEMP-AUTH",
+                        "amount": "$25.00 "
+                    },
+                    {
+                        "date": "Wed Oct 20 2021",
+                        "vendor": "LEMONADE I* LEMONADE I",
+                        "amount": "$6.00 "
+                    }
+                ]
+            },
+            {
+                "date": "Tue Oct 19 2021",
+                "transactions": [
+                    {
+                        "date": "Tue Oct 19 2021",
+                        "vendor": "DoorDash",
+                        "amount": "$9.99 "
+                    },
+                    {
+                        "date": "Tue Oct 19 2021",
+                        "vendor": "SQ *THE GRANDDADDY",
+                        "amount": "$4.50 "
+                    },
+                    {
+                        "date": "Tue Oct 19 2021",
+                        "vendor": "BUCK MASON",
+                        "amount": "$130.00 "
+                    },
+                    {
+                        "date": "Tue Oct 19 2021",
+                        "vendor": "SP * OUTERKNOWN",
+                        "amount": "$166.59 "
+                    },
+                    {
+                        "date": "Tue Oct 19 2021",
+                        "vendor": "ZOOBA",
+                        "amount": "$14.15 "
+                    },
+                    {
+                        "date": "Tue Oct 19 2021",
+                        "vendor": "NY GRILL AND DELI",
+                        "amount": "$15.60 "
+                    }
+                ]
+            },
+            {
+                "date": "Mon Oct 18 2021",
+                "transactions": [
+                    {
+                        "date": "Mon Oct 18 2021",
+                        "vendor": "Amazon",
+                        "amount": "$22.85 "
+                    },
+                    {
+                        "date": "Mon Oct 18 2021",
+                        "vendor": "Amazon",
+                        "amount": "$22.85 "
+                    }
+                ]
+            }
+        ]
+    }
+}

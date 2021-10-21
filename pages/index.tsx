@@ -2,22 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
-interface TransactionsResponse {
-  data: Array<TransactionEntry>;
-  size: number;
-}
-
-interface TransactionEntry {
-  date: string;
-  transactions: Array<Transaction>;
-}
-
-interface Transaction {
-  date: string;
-  amount: string;
-  vendor: string;
-}
+import { TransactionsResponse, Transaction, TransactionEntry } from '../lib/transactions'
+import { computeRollingBudget } from '../lib/budget'
 
 interface HomePageProps {
   transactions?: TransactionsResponse;
@@ -25,6 +11,7 @@ interface HomePageProps {
 
 interface Display {
   transactionsByDate: Array<DisplayTransaction>
+  weeklyBudget: number
 }
 
 interface DisplayTransaction {
@@ -40,14 +27,19 @@ const sortTxnDatesDesc = (txnsByDate: Array<TransactionEntry>) => {
 }
 
 const generateDisplayData = (txnsByDate: Array<TransactionEntry>): Display => {
-  return {
-    transactionsByDate: txnsByDate.map((txn) => ({
-      date: txn.date,
-      transactions: txn.transactions,
-      sum: txn.transactions.reduce((sum, txn) => sum + parseFloat(txn.amount.replace(/[^\d\.]/, '')), 0),
-    }))
-  }
+  return computeRollingBudget(txnsByDate)
 }
+
+const CurrencyAmount = (val: number) => (
+  <div className={styles.currency}>
+
+  </div>
+)
+
+const toCurrency = (val: number) => val.toLocaleString('en-US', {
+  style: 'currency',
+  currency: 'USD',
+})
 
 const Home: NextPage = (props: any) => {
   console.log(props)
@@ -65,6 +57,11 @@ const Home: NextPage = (props: any) => {
         <h1 className={styles.title}>
           Ledger
         </h1>
+        <div className={styles.centered}>
+          <div className={styles.dateheader}>
+            <p>Weekly budget remaining: {toCurrency(display.weeklyBudget)}</p>
+          </div>
+        </div>
 
         <div>
           {props && (!props.transactions || !props.transactions?.data) ? (
@@ -74,10 +71,7 @@ const Home: NextPage = (props: any) => {
               <div key={i} className={styles.transactionEntry}>
                 <div className={styles.spaced} style={{ paddingBottom: '5px' }}>
                   <div className={styles.dateheader}>{t.date}</div>
-                  <div className={styles.dateheader}>{t.sum.toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: 'USD',
-                  })}</div>
+                  <div className={styles.dateheader}>{toCurrency(t.sum)} ({toCurrency(t.dailyBudget)})</div>
                 </div>
                 <div>
                   {t.transactions.map((txn: Transaction, i: number) => (

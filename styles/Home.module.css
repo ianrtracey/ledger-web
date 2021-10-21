@@ -131,3 +131,13 @@
   font-size: 18px;
   font-weight: bold;
 }
+
+.centered {
+  display: flex;
+  justify-content: center;
+}
+
+.currency {
+  font-size: 18px;
+  font-weight: bold;
+}
