@@ -2,8 +2,8 @@ import { TransactionsResponse, TransactionEntry, sumTxns } from "./transactions"
 import sampleTransactions from '../fixtures/transactions.json'
 
 const MONTHLY_BUDGET = 4000
-const WEEKLY_BUDGET = MONTHLY_BUDGET / 4
-const DAILY_BUDGET = MONTHLY_BUDGET / 28
+export const WEEKLY_BUDGET = MONTHLY_BUDGET / 4
+export const DAILY_BUDGET = MONTHLY_BUDGET / 28
 
 
 

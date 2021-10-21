@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { TransactionsResponse, Transaction, TransactionEntry } from '../lib/transactions'
 import { computeRollingBudget } from '../lib/budget'
+import { DAILY_BUDGET, WEEKLY_BUDGET } from '../lib/budget'
 
 interface HomePageProps {
   transactions?: TransactionsResponse;
@@ -58,8 +59,14 @@ const Home: NextPage = (props: any) => {
           Ledger
         </h1>
         <div className={styles.centered}>
-          <div className={styles.dateheader}>
-            <p>Weekly budget remaining: {toCurrency(display.weeklyBudget)}</p>
+          <div>
+            <div className={styles.dateheader}>
+              <p>Weekly budget remaining: {toCurrency(display.weeklyBudget)}</p>
+            </div>
+            <div>
+              <p>Daily budget: {toCurrency(DAILY_BUDGET)}</p>
+              <p>Weekly budget: {toCurrency(WEEKLY_BUDGET)}</p>
+            </div>
           </div>
         </div>
 
@@ -75,7 +82,9 @@ const Home: NextPage = (props: any) => {
                 </div>
                 <div>
                   {t.transactions.map((txn: Transaction, i: number) => (
-                    <div key={i} className={styles.spaced}>
+                    <div key={i} className={styles.spaced} style={{
+                      opacity: txn.hide ? 0.25 : 1.0
+                    }}>
                       <div>{txn.vendor.slice(0, 25)}</div>
                       <div>{txn.amount}</div>
                     </div>
