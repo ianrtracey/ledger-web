@@ -9,12 +9,8 @@
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 1.1em;
+  width: 100%;
 }
 
 .footer {
@@ -47,7 +43,7 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 
 .title,
@@ -118,4 +114,20 @@
     width: 100%;
     flex-direction: column;
   }
+}
+
+.transactionEntry {
+  margin-top: 2.5em;
+  width: 100%;
+}
+
+.spaced {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dateheader {
+  font-size: 18px;
+  font-weight: bold;
 }
