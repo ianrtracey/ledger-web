@@ -30,12 +30,12 @@ interface Display {
 interface DisplayTransaction {
   date: string;
   transactions: Array<Transaction>;
-  sum: string
+  sum: number
 }
 
 const sortTxnDatesDesc = (txnsByDate: Array<TransactionEntry>) => {
   return txnsByDate.sort((t1, t2) => {
-    return new Date(t2.date) - new Date(t1.date)
+    return (new Date(t2.date)) as any - (new Date(t1.date) as any)
   })
 }
 
@@ -49,11 +49,10 @@ const generateDisplayData = (txnsByDate: Array<TransactionEntry>): Display => {
   }
 }
 
-const Home: NextPage = (props: HomePageProps) => {
+const Home: NextPage = (props: any) => {
   console.log(props)
   const sortedTransactions = sortTxnDatesDesc(props.transactions?.data || [])
   const display = generateDisplayData(sortedTransactions)
-  console.log(display)
   return (
     <div className={styles.container}>
       <Head>
