@@ -15,7 +15,7 @@ export const computeRollingBudget = (transactions: Array<TransactionEntry>) => {
     }))
 
     return {
-        weeklyBudget: WEEKLY_BUDGET + txnsWithDailyBudget.reduce((sum: number, txn: any) => sum + txn.dailyBudget, 0),
+        weeklyBudget: WEEKLY_BUDGET - txnsWithDailyBudget.reduce((sum: number, txn: any) => sum + txn.sum, 0),
         transactionsByDate: txnsWithDailyBudget
     }
 }
