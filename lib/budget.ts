@@ -20,6 +20,4 @@ export const computeRollingBudget = (transactions: Array<TransactionEntry>) => {
     }
 }
 
-console.log(computeRollingBudget(sampleTransactions.transactions.data))
-
 export { }

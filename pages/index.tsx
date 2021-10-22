@@ -18,7 +18,8 @@ interface Display {
 interface DisplayTransaction {
   date: string;
   transactions: Array<Transaction>;
-  sum: number
+  sum: number;
+  dailyBudget: number
 }
 
 const sortTxnDatesDesc = (txnsByDate: Array<TransactionEntry>) => {
