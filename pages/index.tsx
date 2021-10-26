@@ -101,7 +101,10 @@ const Home: NextPage = (props: any) => {
 }
 
 export async function getServerSideProps(context: any) {
-  const response = await fetch('https://us-central1-realtime-spending.cloudfunctions.net/getTransactions')
+  const apiUrl = process.env.FIREBASE_FUNCTION_ENV === 'dev' ?
+    'http://localhost:5001/realtime-spending/us-central1/getTransactions' :
+    'https://us-central1-realtime-spending.cloudfunctions.net/getTransactions'
+  const response = await fetch(apiUrl)
   const transactions = await response.json()
   return {
     props: { transactions }
